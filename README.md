@@ -10,9 +10,9 @@ There are multiple methods of retrieving data from a MySQL database using PHP. F
 
 ## Steps
 
-1. Open up PHPMyAdmin.
+1. Open up phpMyAdmin.
 
-If you're using a local server phpMyAdmin can usually be accessed by starting your server and then clickong on the phpMyAdmin link.  If you're using a hosting account there will be a link to phpMyAdmin in your control panel. 
+If you're using a local server phpMyAdmin can usually be accessed by starting your server and then clicking on the phpMyAdmin link. If you're using a hosting account there will be a link to phpMyAdmin in your control panel. 
 
 Once you have phpMyAdmin open, click on the import tab and select the `links.sql` file from this repository. This will create a table called `links` and populate it with some sample data. 
 
@@ -35,13 +35,15 @@ if (!$connect)
 ?>
 ```
 
-The first line of PHP will initiatie a connection. The `mysqli_connect` function requires a host, username, password, and database name. If you are using a local PHP server link MAMP or WAMP your host is `localhost` and your username and password are likely both `root`. This may vary depending on how you set up your local host. The database name will be whataver you named your database, if you don't have one go ahead an create one. 
+The first line of PHP will initiatie a connection to your MySQL server. The `mysqli_connect` function requires a host, username, password, and database name. 
 
-If you are using a hosting account then your MySQL user and database will need to be created in your hosting control panel. There is likely help in your control panel on what to use for your host. 
+If you are using a local PHP server link MAMP or WAMP your host is `localhost` and your username and password are likely both `root`. This may vary depending on how you set up your local host. The database name will be whataver you named your database. If you don't have one go ahead an create one. 
 
-The second part of teh above code will display an error message if the MySQL connection failed. 
+If you are using a hosting account, your MySQL user, password, and database will need to be created in your hosting control panel. There is likely help in your control panel on what to use for your host. 
 
-> Hint: It would be a good idea to test at thi point, nothing else below will work if your MySQL connection isn't working. 
+The second part of the above code will display an error message if the MySQL connection fails. 
+
+> Hint: It would be a good idea to test at this point, nothing else below will work if your MySQL connection isn't working. 
 
 > [More information on PHP and `mysqli_connect()`](https://www.php.net/manual/en/function.mysqli-connect.php)
 
@@ -66,7 +68,9 @@ echo '<p>The query found ' . mysqli_num_rows($result) . ' rows:</p>';
 ?>
 ```
 
-The first block of PHP will create and execute an SQL statement. If this query is successful then inside the `$result` variable will be a list of links. The next block of code will display an error message if the query failed. The final line of PHP will inform us as to how many records teh query retrieved.
+The first block of PHP will create and execute an SQL statement. If this query is successful then inside the `$result` variable will be a list of links. The next block of code will display an error message if the query failed. The final line of PHP will inform us as to how many records the query retrieved.
+
+> [More information on PHP and `mysqli_query()`](https://www.php.net/manual/en/mysqli.query.php)
 
 4. After the query has executed successfully, add this PHP:
 
@@ -90,6 +94,8 @@ while ($record = mysqli_fetch_assoc($result))
 ```
 
 The above code will loop through each record and display the link. From here the link information will need to be formatted using HTML just like the [php-for-while](https://github.com/codeadamca/php-for-while) and [php-if-switch](https://github.com/codeadamca/php-if-switch) examples.
+
+> [More information on PHP and `mysqli_fetch_assoc()`](https://www.php.net/manual/en/mysqli-result.fetch-assoc.php)
 
 ## Tutorial Requirements:
 
