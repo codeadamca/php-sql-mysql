@@ -1,4 +1,4 @@
-# php-sql-mysql
+# A Basic Introduction to PHP and MySQL
 
 This tutorial will review how to use SQL and PHP to display data from a MySQL database in an HTML webpage. 
 
