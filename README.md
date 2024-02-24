@@ -43,9 +43,10 @@ There are multiple methods of retrieving data from a MySQL database using PHP. F
     
     The second part of the above code will display an error message if the MySQL connection fails. 
     
-    > Hint: It would be a good idea to test at this point, nothing else below will work if your MySQL connection isn't working. 
-    
     > [More information on PHP and `mysqli_connect()`](https://www.php.net/manual/en/function.mysqli-connect.php)
+    
+> [!Note]
+> It would be a good idea to test at this point, nothing else below will work if your MySQL connection isn't working. 
 
 4. In the body section of your document add the following PHP:
 
